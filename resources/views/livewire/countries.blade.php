@@ -1,14 +1,16 @@
 <div class="row">
     <div class="col-md-12">
-
         <div class="row">
             <div class="col-12">
-                <div class="float-end my-2">
+                <div class="d-flex justify-content-between">
+                    <h4>Countries</h4>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCountry">Add Country</button>
+                </div>
+                <div class="float-end my-2">
+                    
                 </div>
             </div>
         </div>
-
         @if (count($countries) > 0)
             <table class="table">
                 <thead>
@@ -43,6 +45,8 @@
 
 
     </div>
+    
+    {{-- MODALS --}}
 
     <div wire:ignore.self class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="addCountry">
         <div class="modal-dialog modal-sm">
@@ -155,16 +159,3 @@
         </div>
     </div>    
 </div>
-
-<script>
-  
-    $(document).ready(function () {
-        $(window).on('closeModal', function(event) {
-            $('#' + event.detail).modal('hide');
-        });
-        $(window).on('openModal', function(event) {
-            $('#' + event.detail).modal('show');
-        });
-    });
-   
-</script>

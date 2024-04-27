@@ -28,7 +28,7 @@
                 {{-- livewire components will be rendered here --}}
 
                 @livewire('countries')
-
+                @livewire('states')
             </div>
         </div>
         
@@ -43,6 +43,17 @@
 
         <script>
             
+
+            $(document).ready(function () {
+                $(window).on('closeModal', function(event) {
+                    $('#' + event.detail).modal('hide');
+                });
+                $(window).on('openModal', function(event) {
+                    $('#' + event.detail).modal('show');
+                });
+            });
+
+
             //prepare toast
             const Toast = Swal.mixin({
                 toast: true,

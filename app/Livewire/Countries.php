@@ -49,6 +49,7 @@ class Countries extends Component
             'message' => "Country Added Successfully!!",
         ]);
 
+       $this->dispatch('refreshStates');
     }
 
     #[On('country-deleted')]
@@ -62,6 +63,8 @@ class Countries extends Component
                 'type' => 'success',
                 'message' => "Country deleted Successfully!!",
             ]);
+            
+            $this->dispatch('refreshStates');
     }
 
     public function editCountry(Country $country)
